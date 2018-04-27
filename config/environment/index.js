@@ -6,7 +6,7 @@ import _ from 'lodash';
 process.env.NODE_ENV = process.env.NODE_ENV
   ? process.env.NODE_ENV
   : 'development';
-module.exports = {
+var all = {
     // Secret for session, you will want to change this and make it an environment
     // variable
     secrets: {
@@ -23,4 +23,4 @@ module.exports = {
         clientSecret: "XJsG3w5u41k5DPTEcaQoc5d3"
     },
 }
-require(`./${process.env.NODE_ENV}.js` || {});
+module.exports = _.merge(all, require(`./${process.env.NODE_ENV}.js`) || {});
