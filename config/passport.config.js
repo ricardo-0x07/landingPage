@@ -1,5 +1,7 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+import { Strategy as FacebookStrategy } from 'passport-facebook'
+
 const keys = require('./keys');
 const Adopters = require('../models/adopters')
 
@@ -46,3 +48,4 @@ passport.use(
         });
     })
 );
+

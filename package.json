@@ -5,21 +5,35 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon --exec babel-node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "composable-middleware": "^0.3.0",
     "ejs": "^2.5.8",
     "express": "^4.16.3",
+    "express-jwt": "^5.3.1",
     "express-validator": "^5.1.2",
+    "jsonwebtoken": "^8.2.1",
+    "lodash": "^4.17.5",
     "mongoose": "^5.0.14",
     "morgan": "^1.9.0",
     "nodemon": "^1.17.3",
     "parse-error": "^0.2.0",
     "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
     "passport-google-oauth20": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.19.1",
+    "eslint-config-equimper": "^2.2.2",
+    "eslint-config-prettier": "^2.9.0",
+    "prettier": "^1.12.1"
   }
 }
