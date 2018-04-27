@@ -18,23 +18,23 @@ export function setup(Adopters, config) {
     done(null,profile);
 
 
-    // Adopters.find({where: {'facebookID': profile.id}})
-    //   .then(user => {
-    //     if(user) {
-    //       return done(null, user);
-    //     }
+    Adopters.find({where: {'facebookID': profile.id}})
+      .then(user => {
+        if(user) {
+          return done(null, user);
+        }
 
-    //     user = Adopters.build({
-    //       username: profile.displayName,
-    //       email: profile.emails[0].value,
-    //       role: 'user',
-    //       provider: 'facebook',
-    //       facebookID: profile.id
-    //     });
-    //     user.save()
-    //       .then(savedUser => done(null, savedUser))
-    //       .catch(err => done(err));
-    //   })
-    //   .catch(err => done(err));
+        user = Adopters.build({
+          username: profile.displayName,
+          email: profile.emails[0].value,
+          role: 'user',
+          provider: 'facebook',
+          facebookID: profile.id
+        });
+        user.save()
+          .then(savedUser => done(null, savedUser))
+          .catch(err => done(err));
+      })
+      .catch(err => done(err));
   }));
 }
