@@ -7,6 +7,8 @@ const Adopters = new Schema({
   phone: {type: String},
   googleID: {type: String},
   facebookID: {type: String},
+  role: {type: String},
+  provider: {type: String},
   username:{type:String}
 
 

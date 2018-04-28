@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 module.exports = (config) => {
-    var dbURI = config.dev.mlab;
+  console.log('config: ', config);
+    var dbURI = config.mlab;
 
     // using new syntax for mongoose library
     // check the mongoose doc for more info
