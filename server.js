@@ -32,7 +32,7 @@ const app = express();
 // Passport configuration
 require('./auth/facebook/passport').setup(Adopters, config);
 app.use(passport.initialize());
-app.get('/flogin', passport.authenticate('facebook', { scope : ['email', 'public_profile'] }));
+app.get('/auth/facebook', passport.authenticate('facebook', { scope : ['email', 'public_profile'] }));
 app.get('/auth/facebook/callback',
     passport.authenticate('facebook', { session: false }),
     (req, res) => {

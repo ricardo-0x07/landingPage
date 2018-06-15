@@ -9,11 +9,13 @@ var router = express.Router();
 router
   .get('/', passport.authenticate('facebook', {
     scope: ['email', 'user_about_me'],
-    failureRedirect: '/signup',
+    successRedirect : '/profile',
+    failureRedirect: '/',
     session: false
   }))
   .get('/callback', passport.authenticate('facebook', {
-    failureRedirect: '/signup',
+    successRedirect : '/profile',
+    failureRedirect: '/',
     session: false
   }), setTokenCookie);
 
